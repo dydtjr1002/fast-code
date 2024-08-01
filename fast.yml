@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fast-dep
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fast
+  template:
+    metadata:
+      name: fast-pod
+      labels:
+        app: fast
+    spec:
+      containers:
+      - name: fast-con
+        image: 521607973210.dkr.ecr.ap-northeast-2.amazonaws.com/fast:10
